@@ -10,19 +10,16 @@ class Animal:
         else:
             print(f'{self.name} не стал есть {food.name}')
             self.alive = False
+
+
 class Mammal(Animal):
     def __init__(self, name):
         self.name = name
-    # def __str__(self):
-    #     return f'{self.name}'
-
+    
 
 class Predator(Animal):
     def __init__(self, name):
         self.name = name
-
-    # def __str__(self):
-    #     return f'{self.name}'
 
 
 class Plant:
