@@ -1,60 +1,43 @@
 class Animal:
-    def __init__(self, name):
-        self.alive = True  # живой
-        self.fed = False  #накормленный
-        self.name = name
-
-    def __str__(self):
-        return f'{self.name}'
+    alive = True  # живой
+    fed = False  #накормленный
 
     def eat(self, food):
-        if isinstance(food, Plant):
-            if food.edible:
-                print(f'{self.name} съел {food.name}')
-                self.fed = True
-            else:
-                print(f'{self.name} не стал есть {food.name}')
-                self.alive = False
+
+        if food.edible:
+            print(f'{self.name} съел {food.name}')
+            self.fed = True
+        else:
+            print(f'{self.name} не стал есть {food.name}')
+            self.alive = False
 class Mammal(Animal):
-    pass
-    # def eat(self, food):
-    #     if isinstance(food, Plant):
-    #         if food.edible:
-    #             print(f'{self.name} съел {food.name}')
-    #             self.fed = True
-    #         else:
-    #             print(f'{self.name} не стал есть {food.name}')
-    #             self.alive = False
+    def __init__(self, name):
+        self.name = name
+    # def __str__(self):
+    #     return f'{self.name}'
 
 
 class Predator(Animal):
-    pass
-    # def eat(self, food):
-    #     if isinstance(food, Plant):
-    #         if food.edible:
-    #             print(f'{self.name} съел {food.name}')
-    #             self.fed = True
-    #         else:
-    #             print(f'{self.name} не стал есть {food.name}')
-    #             self.alive = False
+    def __init__(self, name):
+        self.name = name
+
+    # def __str__(self):
+    #     return f'{self.name}'
 
 
 class Plant:
     edible = False
 
+
+class Flower(Plant):
     def __init__(self, name):
         self.name = name
 
-    def __str__(self):
-        return f'{self.name}'
-
-
-class Flower(Plant):
-   pass
-
-
 class Fruit(Plant):
     edible = True
+
+    def __init__(self, name):
+        self.name = name
 
 
 a1 = Predator('Волк с Уолл-Стрит')
